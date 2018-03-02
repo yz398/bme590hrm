@@ -1,4 +1,4 @@
-def mean_bpm(interval, time):
+def mean_bpm(x, f):
     """
     find the duration for the sample
 
@@ -37,8 +37,8 @@ def mean_bpm(interval, time):
             if num == float('inf') or num == float('-inf'):
                 raise ValueError()
     period = 60
-    num = beats(interval)
-    t = duration(time)
+    num = beats(x)
+    t = duration(f)
     mean_min_bpm = period*num/t
     logging.info("Returning estimate bmp per minute")
     return mean_min_bpm
