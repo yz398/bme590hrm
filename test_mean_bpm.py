@@ -4,7 +4,7 @@ def test_mean_bpm():
     """
     try:
         import pytest
-        from list_module.mean_bpm import mean_bpm 
+        from list_module.mean_bpm import mean_bpm
         from list_module.beats import beats
     except ImportError:
         print("Necessary imports for this test function failed")
@@ -12,7 +12,7 @@ def test_mean_bpm():
 
     x1 = [1, 2, 3, 4]
     f1 = [1, 2, 3]
-    x2= []
+    x2 = []
     f2 = []
     test_answer1 = 120.0
     test_answer2 = None
@@ -21,7 +21,7 @@ def test_mean_bpm():
     with pytest.raises(TypeError):
         mean_bpm(5, 6)
     with pytest.raises(TypeError):
-        mean_bpm('abc',[1, 2, 3])
+        mean_bpm('abc', [1, 2, 3])
     with pytest.raises(TypeError):
         mean_bpm({1: 4}, [1, 2, 3])
     with pytest.raises(ValueError):
