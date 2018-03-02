@@ -8,7 +8,7 @@ def test_time_beats():
         import numpy
     except ImportError:
         print("Necessary imports for this test function failed")
-        return    
+        return
     x1 = []
     f1 = []
     x2 = [1, 3, 5, 7]
@@ -24,5 +24,4 @@ def test_time_beats():
     with pytest.raises(TypeError):
         time_beats({1: 4}, [1, 2, 3])
     with pytest.raises(ValueError):
-        time_beats(['s', 's'], [1, 2, 3]) 
-        
+        time_beats(['s', 's'], [1, 2, 3])
