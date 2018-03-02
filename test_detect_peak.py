@@ -9,7 +9,7 @@ def test_detect_peak():
         print("Necessary imports for this test function failed")
         return
 
-    test_data1 = [0, 3, -2, 7, 1,4]
+    test_data1 = [0, 3, -2, 7, 1, 4]
     test_data2 = []
     test_answer1 = [[3, 7], [1, 3]]
     test_answer2 = None

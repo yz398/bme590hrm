@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def time_beats(x,f):
     """
     find the time series for a beat
@@ -14,33 +17,24 @@ def time_beats(x,f):
     """
     try:
         import logging
-        import numpy as np
     except ImportError:
-        print("Could not import modules")
+        print("Could not import logging module")
         return
     else:
         logging.basicConfig(filename='example.log', level=logging.DEBUG,
                             filemode='w')
-#    try:
-#        f = f 
-#    except TypeError:
-#        logging.error('missing one input')
-#        raise TypeError('missing one input')
     if type(x) is not list:
         logging.error('Watch out!The input should be list')
         raise TypeError('TypeError with the inputx')
     if type(f) is not list:
         logging.error('Watch out!The input should be list')
         raise TypeError('TypeError with the inputf')
-    if not x and f != []:
+    if not x:
         logging.warning("Empty list x given")
         return None
-    if not f and x != []:
+    if not f:
         logging.warning("Empty list f given")
         return None
-    if not f and not x:
-        logging.warning("Empty list x,f given")
-        return (None,None)
     for val in x:
         try:
             num = float(val)
@@ -53,16 +47,16 @@ def time_beats(x,f):
         else:
             if num == float('inf') or num == float('-inf'):
                 raise ValueError()
-    nn=len(x)
+    nn = len(x)
     interval = []
     for i in range(nn-1):
         interval.append(x[i+1]-x[i])
     l = max(interval)
-    temp=np.zeros(shape=(nn-1,l),dtype=float)
+    temp = np.zeros(shape=(nn-1, l),dtype=float)
     for i in range(nn-1):
-        #each period between 2 indexs
-        temp[i][0]=x[i+1]-x[i]
+#each period between 2 indexs
+        temp[i][0] = x[i+1]-x[i]
         for j in range(int(temp[i][0])-1):
-            temp[i][j+1]=f[x[i]+j]
+            temp[i][j+1] = f[x[i]+j]
     logging.info("Returning numpy array include time series")
     return temp

@@ -9,4 +9,4 @@ def test_collectdata():
         print("Necessary imports for this test function failed")
         return 
     with pytest.raises(TypeError):
-        collectdata([1,2,3])
+        collectdata([1, 2, 3])

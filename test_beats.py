@@ -29,4 +29,4 @@ def test_beats():
     with pytest.raises(ValueError):
         beats([float('inf'), 5])
     with pytest.raises(ValueError):
-        beats([float('-inf'), 5]) 
+        beats([float('-inf'), 5])

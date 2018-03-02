@@ -1,4 +1,6 @@
 import numpy as np
+
+
 def detect_peak(x):
     """
     find the peaks of the list of voltages and 
@@ -9,8 +11,8 @@ def detect_peak(x):
     :raises TypeError:  if the input is not a list or the input includes string
     :raises ValueError: if the input includes string
 
-    :returns: return a list of indexes and value
-    :rtype: [float,float]
+    :returns: return a tuple include minimum and maximum of the list
+    :rtype: (float,float)
     """
     try:
         import logging
@@ -38,28 +40,28 @@ def detect_peak(x):
         else:
             if num == float('inf') or num == float('-inf'):
                 raise ValueError() 
-    detect_value =[]
+    detect_value = []
     detect_index = []
     for i in range(len(x)):
-        if i ==0 and x[i]>=x[i+1] and x[i]>=x[i+2] and x[i]>0:
+        if i == 0 and x[i] >=x[i+1] and x[i] >=x[i+2] and x[i] >0:
             detect_value.append(x[i])
             detect_index.append(i)
-        elif i ==len(x)-1 and x[i]>=x[i-1] and x[i]>=x[i-2] and x[i]>0:
+        elif i == len(x)-1 and x[i] >=x[i-1] and x[i] >=x[i-2] and x[i] >0:
             detect_value.append(x[i])
             detect_index.append(i)
-        elif i<(len(x)-1) and x[i]>=x[i-1] and x[i]>=x[i+1] and x[i]>0:
+        elif i <(len(x)-1) and x[i] >=x[i-1] and x[i] >=x[i+1] and x[i] >0:
             detect_value.append(x[i])
             detect_index.append(i)
     interval = []
     for i in range(len(detect_index)-1):
         inter = detect_index[i+1]-detect_index[i]
-        if inter>0:
+        if inter >0:
             interval.append(inter)
     detect_v1 = []
     detect_i1 = []
     for i in range(len(interval)):
-        if interval[i]<0.5*np.median(interval):
-            if detect_value[i]<detect_value[i+1]:
+        if interval[i] <0.5*np.median(interval):
+            if detect_value[i] <detect_value[i+1]:
                 detect_v1.append(detect_value[i+1])
                 detect_i1.append(detect_index[i+1])
             else:

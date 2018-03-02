@@ -1,6 +1,6 @@
 def beats(x):
     """
-    find the number of detected beats in the strip
+    find the duration for the sample
 
     :param x: the input should be a list of peaks
     :raises ImportError:  if the module not found

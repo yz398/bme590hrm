@@ -35,4 +35,4 @@ def test_min_max_voltage():
     with pytest.raises(ValueError):
         min_max_voltage([float('inf'), 5])
     with pytest.raises(ValueError):
-        min_max_voltage([float('-inf'), 5]) 
+        min_max_voltage([float('-inf'), 5])
