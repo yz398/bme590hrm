@@ -21,7 +21,6 @@ class ECG():
         :param self.durationtime: time duration of the ECG strip
         :param self.num_beat:number of detected beats in the strip
         :param self.time_beat:numpy array of times when a beat occurred
-        :param peaks: 2 lists contain original time and voltage
 
         :return: different attributes
     """
