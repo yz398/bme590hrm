@@ -5,7 +5,7 @@ Yi Zhao
 the basic functions are in list_module
 
 the way to get the results:
-	ECG('test_data1.csv')
+	core = ECG(filename = 'test_data1.csv')
 
 In the class ECG, it contains mean_bpm, duration, voltage_extremes,
 time_beats, num_beats	
