@@ -13,7 +13,7 @@ def test_mean_bpm():
     x1 = [1, 2, 3, 4]
     f1 = [1, 2, 3]
     x2 = []
-    f2 = []
+    f2 = [1, 2, 3]
     test_answer1 = 120.
     test_answer2 = None
     assert test_answer1 == mean_bpm(x1, f1)
