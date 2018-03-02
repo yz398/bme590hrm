@@ -13,7 +13,7 @@ def test_beats():
     test_answer1 = 4
     test_answer2 = None
     assert test_answer1 == beats(test_data1)
-    assert test_answer2 == beats(test_data2) 
+    assert test_answer2 == beats(test_data2)
     with pytest.raises(TypeError):
         beats(5)
     with pytest.raises(TypeError):
