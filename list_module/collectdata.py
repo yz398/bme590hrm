@@ -29,5 +29,11 @@ def collectdata(x):
         return (None, None)
     with open(x) as f:
         df = pd.read_csv(x, names=["time", "voltage"])
-        logging.info("Returning a list with time and voltage")
+        time = df.time
+        time = time.tolist()
+        voltage = df.voltage
+        voltage = voltage.tolist()
+	logging.info("Returning 2 lists of time and voltage")
+    return time,voltage
+	logging.info("Returning a list with time and voltage")
     return df
