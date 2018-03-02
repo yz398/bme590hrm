@@ -36,6 +36,6 @@ def beats(x):
         else:
             if num == float('inf') or num == float('-inf'):
                 raise ValueError()
-    numbeats =len(x)
+    numbeats = len(x)
     logging.info("Returning number of beats")
     return numbeats
