@@ -16,9 +16,7 @@ def test_time_beats():
     test_answer1 = None
     test_answer2 = [[2., 2.], [2., 4.], [2., 5.]]
     assert test_answer1 == time_beats(x1, f1)
-    if (test_answer2 == time_beats(x2, f2)).all() is True:
-        test_answer = 0
-    assert test_answer == 0
+    assert (test_answer2 == time_beats(x2, f2)).all() is True
     with pytest.raises(TypeError):
         time_beats(5, 6)
     with pytest.raises(TypeError):
