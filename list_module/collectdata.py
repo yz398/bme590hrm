@@ -9,7 +9,7 @@ def collectdata(x):
 
         :param self: list to be determined and used later
         :type self: list
-       
+
         :return: a list
         :rtype: list
     """
