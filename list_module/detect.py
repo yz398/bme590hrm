@@ -3,7 +3,7 @@ import numpy as np
 
 def detect_peak(x):
     """
-    find the peaks of the list of voltages and 
+    find the peaks of the list of voltages and
     return peaks value and indexes
 
     :param x: the input should be a list
@@ -39,23 +39,23 @@ def detect_peak(x):
             raise TypeError()
         else:
             if num == float('inf') or num == float('-inf'):
-                raise ValueError() 
+                raise ValueError()
     detect_value = []
     detect_index = []
     for i in range(len(x)):
-        if i == 0 and x[i] >= x[i+1] and x[i] >= x[i+2] and x[i] >0:
+        if i == 0 and x[i] >= x[i+1] and x[i] >= x[i+2] and x[i] > 0:
             detect_value.append(x[i])
             detect_index.append(i)
-        elif i == len(x)-1 and x[i] >= x[i-1] and x[i] >= x[i-2] and x[i] >0:
+        elif i == len(x)-1 and x[i] >= x[i-1] and x[i] >= x[i-2] and x[i] > 0:
             detect_value.append(x[i])
             detect_index.append(i)
-        elif i <(len(x)-1) and x[i] >= x[i-1] and x[i] >= x[i+1] and x[i] >0:
+        elif i < (len(x)-1) and x[i] >= x[i-1] and x[i] >= x[i+1] and x[i] > 0:
             detect_value.append(x[i])
             detect_index.append(i)
     interval = []
     for i in range(len(detect_index)-1):
         inter = detect_index[i+1]-detect_index[i]
-        if inter >0:
+        if inter > 0:
             interval.append(inter)
     detect_v1 = []
     detect_i1 = []
@@ -77,5 +77,5 @@ def detect_peak(x):
     detect_i1 = list(detect_i1)
     detect_i1.sort()
     peak = [detect_v1, detect_i1]
-    logging.info("Returning peak value and indexes") 
+    logging.info("Returning peak value and indexes")
     return peak
