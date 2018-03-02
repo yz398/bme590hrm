@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def time_beats(x,f):
+def time_beats(x, f):
     """
     find the time series for a beat
     the first value of each row is the valid number of the time series
@@ -52,9 +52,8 @@ def time_beats(x,f):
     for i in range(nn-1):
         interval.append(x[i+1]-x[i])
     l = max(interval)
-    temp = np.zeros(shape=(nn-1, l),dtype=float)
+    temp = np.zeros(shape=(nn-1, l), dtype=float)
     for i in range(nn-1):
-#each period between 2 indexs
         temp[i][0] = x[i+1]-x[i]
         for j in range(int(temp[i][0])-1):
             temp[i][j+1] = f[x[i]+j]
