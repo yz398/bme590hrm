@@ -13,6 +13,7 @@ def mean_bpm(x, f):
     try:
         import logging
         from list_module.beats import beats
+        from list_module.duration import duration
     except ImportError:
         print("Could not import logging module")
         return
