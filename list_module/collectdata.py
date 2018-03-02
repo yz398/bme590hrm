@@ -33,7 +33,5 @@ def collectdata(x):
         time = time.tolist()
         voltage = df.voltage
         voltage = voltage.tolist()
-	logging.info("Returning 2 lists of time and voltage")
+        logging.info("Returning 2 lists of time and voltage")
     return time,voltage
-	logging.info("Returning a list with time and voltage")
-    return df

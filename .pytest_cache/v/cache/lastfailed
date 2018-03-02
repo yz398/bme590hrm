@@ -1,3 +1,4 @@
 {
-  "test_ECG.py": true
+  "test_ECG.py": true,
+  "test_class_ecg.py": true
 }
