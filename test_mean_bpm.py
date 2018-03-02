@@ -6,6 +6,7 @@ def test_mean_bpm():
         import pytest
         from list_module.mean_bpm import mean_bpm
         from list_module.beats import beats
+        from list_module.duration import duration
     except ImportError:
         print("Necessary imports for this test function failed")
         return
