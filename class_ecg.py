@@ -50,13 +50,13 @@ class ECG():
     def peak(self):
         """
             return the peaks' information of the ECG data
-            
+
             :param fv: the original list of voltage
             :param cd: the list to store the results of correlate
             :param cb;a list store correlation results after thereshold
             :param a : the maximam of the original voltage
             :param aa: the sample to do the correlate
-            
+
             :returns: return a list include index and value of peaks
             :rtype: [float,float]
         """
