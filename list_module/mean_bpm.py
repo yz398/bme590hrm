@@ -1,6 +1,6 @@
 def mean_bpm(x, f):
     """
-    find the duration for the sample
+    estimate the bpm per minute for the sample
 
     :param x: the input should be a list of peaks
     :raises ImportError:  if the module not found
