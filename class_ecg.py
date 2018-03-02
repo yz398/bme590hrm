@@ -11,12 +11,13 @@ import json
 class ECG():
     """
         returns various attributes
-              
+
         :param self: the name of test sample
         :type self: str
         :param self.time: the list of test time
         :param self.voltage: the list of test voltage
-        :param self.voltage_extremes: tuple containing minimum and maximum lead voltages
+        :param self.voltage_extremes: tuple containing minimum and
+                                        maximum lead voltages
         :param self.durationtime: time duration of the ECG strip
         :param self.num_beat:number of detected beats in the strip
         :param self.time_beat:numpy array of times when a beat occurred
@@ -24,15 +25,15 @@ class ECG():
         
         :return: different attributes
     """
-    def __init__(self,filename='test'):
+    def __init__(self, filename='test'):
         self.filename = filename
-        (self.time, self.voltage) = (None,None)
+        (self.time, self.voltage) = (None, None)
         self.mean_hr_bpm = None
         self.voltage_extremes = None
         self.durationtime = None
         self.num_beat = None
         self.time_beat = None
-        self.peaks =[None,None]
+        self.peaks = [None, None]
         
         self.collectdata()
         self.peak()
@@ -42,12 +43,12 @@ class ECG():
         self.min_max_voltage()
         self.duration()
         
-        self.writejson() 
+        self.writejson()
 
     def collectdata(self):
         (self.time, self.voltage) = collectdata(self.filename)
         return self.time, self.voltage
-    
+
     def peak(self):
         """
             return the peaks' information of the ECG data
@@ -65,11 +66,11 @@ class ECG():
         a = fv.index(max(fv))
         import matplotlib.pyplot as plt
         aa = fv[a-12:a+12]
-        cd = np.correlate(aa,fv,'full')
+        cd = np.correlate(aa, fv, 'full')
         cb = []
         for i in range(len(cd)-1):
-                if cd[i]>0.2*max(cd):
-                    cb.append(cd[i])   
+                if cd[i] > 0.2*max(cd):
+                    cb.append(cd[i]) 
                 else:
                     cb.append(0)
         plt.figure(1)
@@ -78,36 +79,29 @@ class ECG():
         plt.show()
         self.peaks = detect_peak(cb)
         return self.peaks
-    
     def mean_bpm(self):
-        self.mean_hr_bpm = mean_bpm(self.peaks[1],self.time)
+        self.mean_hr_bpm = mean_bpm(self.peaks[1], self.time)
         return self.mean_hr_bpm
-    
     def min_max_voltage(self):
         self.voltage_extremes = min_max_voltage(self.voltage)
         return self.voltage_extremes
-    
     def duration(self):
         self.durationtime = duration(self.time)
         return self.durationtime
-    
     def time_beats(self):
-        self.time_beat = time_beats(self.peaks[1],self.voltage)
-        return self.time_beat 
-    
+        self.time_beat = time_beats(self.peaks[1], self.voltage)
+        return self.time_beat
     def beats(self):
         self.num_beat = beats(self.peaks[1])
-        return self.num_beat 
-        
+        return self.num_beat
     def writejson(self):
         figures = {"mean_hr_bpm": "self.mean_hr_bpm",
                    "voltage_extremes": "self.voltage_extremes",
                    "duration": "self.durationtime",
                    "num_beat": "self.numbeat",
-                   "beats": "self.time_beat"
-                  }
+                   "beats": "self.time_beat"}
         a = self.filename
-        b = a.replace('.csv','.json')
-        with open (b,"w") as f:
-            json.dump(figures,f)
+        b = a.replace('.csv', '.json')
+        with open (b, "w") as f:
+            json.dump(figures, f)
         return
