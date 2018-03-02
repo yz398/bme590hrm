@@ -41,7 +41,7 @@ class ECG():
         self.mean_bpm()
         self.time_beats()
         self.min_max_voltage()
-        self.duration()       
+        self.duration()
         self.writejson()
 
     def collectdata(self):
