@@ -21,12 +21,6 @@ class ECG():
         :param self.durationtime: time duration of the ECG strip
         :param self.num_beat:number of detected beats in the strip
         :param self.time_beat:numpy array of times when a beat occurred
-        :param peaks: 2 lists contain original time and voltage
-        :param fv: the original list of voltage in def peak
-        :param cd: the list to store the results of correlate in def peak
-        :param cb;a list store correlation results after thereshold  in def peak
-        :param a : the maximam of the original voltage  in def peak
-        :param aa: the sample to do the correlate  in def peak
 
         :return: different attributes
     """
@@ -54,6 +48,18 @@ class ECG():
         return self.time, self.voltage
 
     def peak(self):
+        """
+            return the peaks' information of the ECG data
+            
+            :param fv: the original list of voltage
+            :param cd: the list to store the results of correlate
+            :param cb;a list store correlation results after thereshold
+            :param a : the maximam of the original voltage
+            :param aa: the sample to do the correlate
+            
+            :returns: return a list include index and value of peaks
+            :rtype: [float,float]
+        """
         fv = self.voltage
         a = fv.index(max(fv))
         import matplotlib.pyplot as plt
