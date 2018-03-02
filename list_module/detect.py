@@ -43,13 +43,13 @@ def detect_peak(x):
     detect_value = []
     detect_index = []
     for i in range(len(x)):
-        if i == 0 and x[i] >=x[i+1] and x[i] >=x[i+2] and x[i] >0:
+        if i == 0 and x[i] >= x[i+1] and x[i] >= x[i+2] and x[i] >0:
             detect_value.append(x[i])
             detect_index.append(i)
-        elif i == len(x)-1 and x[i] >=x[i-1] and x[i] >=x[i-2] and x[i] >0:
+        elif i == len(x)-1 and x[i] >= x[i-1] and x[i] >= x[i-2] and x[i] >0:
             detect_value.append(x[i])
             detect_index.append(i)
-        elif i <(len(x)-1) and x[i] >=x[i-1] and x[i] >=x[i+1] and x[i] >0:
+        elif i <(len(x)-1) and x[i] >= x[i-1] and x[i] >= x[i+1] and x[i] >0:
             detect_value.append(x[i])
             detect_index.append(i)
     interval = []
@@ -60,8 +60,8 @@ def detect_peak(x):
     detect_v1 = []
     detect_i1 = []
     for i in range(len(interval)):
-        if interval[i] <0.5*np.median(interval):
-            if detect_value[i] <detect_value[i+1]:
+        if interval[i] < 0.5*np.median(interval):
+            if detect_value[i] < detect_value[i+1]:
                 detect_v1.append(detect_value[i+1])
                 detect_i1.append(detect_index[i+1])
             else:
