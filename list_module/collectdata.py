@@ -1,13 +1,15 @@
 import csv
 import numpy as np
 import pandas as pd
+
+
 def collectdata(x):
     """
         returns a list included time and voltage
-        
+
         :param self: list to be determined and used later
         :type self: list
-        
+       
         :return: a list
         :rtype: list
     """
@@ -24,8 +26,8 @@ def collectdata(x):
         raise TypeError('TypeError with the input')
     if not x:
         logging.warning("Empty list given")
-        return (None, None)    
+        return (None, None)
     with open(x) as f:
         df = pd.read_csv(x, names=["time", "voltage"])
-        logging.info("Returning a list with time and voltage")       
+        logging.info("Returning a list with time and voltage")
     return df
