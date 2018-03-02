@@ -21,18 +21,18 @@ def test_min_max_voltage():
     assert test_answer3 == min_max_voltage(test_data3)
     assert test_answer4 == min_max_voltage(test_data4)
     with pytest.raises(TypeError):
-        min_max_list(5)
+        min_max_voltage(5)
     with pytest.raises(TypeError):
-        min_max_list('abc')
+        min_max_voltage('abc')
     with pytest.raises(TypeError):
-        min_max_list({1: 4})
+        min_max_voltage({1: 4})
     with pytest.raises(ValueError):
-        min_max_list(['s', 's'])
+        min_max_voltage(['s', 's'])
     with pytest.raises(ValueError):
-        min_max_list(['-inf', 5])
+        min_max_voltage(['-inf', 5])
     with pytest.raises(ValueError):
-        min_max_list(['+inf', 5])
+        min_max_voltage(['+inf', 5])
     with pytest.raises(ValueError):
-        min_max_list([float('inf'), 5])
+        min_max_voltage([float('inf'), 5])
     with pytest.raises(ValueError):
-        min_max_list([float('-inf'), 5]) 
+        min_max_voltage([float('-inf'), 5]) 

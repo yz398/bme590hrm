@@ -19,18 +19,10 @@ def test_mean_bpm():
     assert test_answer1 == mean_bpm(test_data1)
     assert test_answer2 == mean_bpm(test_data2)
     with pytest.raises(TypeError):
-        min_max_list(5)
+        mean_bpm(5,6)
     with pytest.raises(TypeError):
-        min_max_list('abc')
+        mean_bpm('abc',[1,2,3])
     with pytest.raises(TypeError):
-        min_max_list({1: 4})
+        mean_bpm({1: 4},[1,2,3])
     with pytest.raises(ValueError):
-        min_max_list(['s', 's'])
-    with pytest.raises(ValueError):
-        min_max_list(['-inf', 5])
-    with pytest.raises(ValueError):
-        min_max_list(['+inf', 5])
-    with pytest.raises(ValueError):
-        min_max_list([float('inf'), 5])
-    with pytest.raises(ValueError):
-        min_max_list([float('-inf'), 5]) 
+        mean_bpm(['s', 's'],[1,2,3])

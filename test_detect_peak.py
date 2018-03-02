@@ -1,4 +1,4 @@
-def test_min_max_list():
+def test_detect_peak():
     """
     Tests the detect_peak function
     """
@@ -16,18 +16,18 @@ def test_min_max_list():
     assert test_answer1 == detect_peak(test_data1)
     assert test_answer2 == detect_peak(test_data2)
     with pytest.raises(TypeError):
-        min_max_list(5)
+        detect_peak(5)
     with pytest.raises(TypeError):
-        min_max_list('abc')
+        detect_peak('abc')
     with pytest.raises(TypeError):
-        min_max_list({1: 4})
+        detect_peak({1: 4})
     with pytest.raises(ValueError):
-        min_max_list(['s', 's'])
+        detect_peak(['s', 's'])
     with pytest.raises(ValueError):
-        min_max_list(['-inf', 5])
+        detect_peak(['-inf', 5])
     with pytest.raises(ValueError):
-        min_max_list(['+inf', 5])
+        detect_peak(['+inf', 5])
     with pytest.raises(ValueError):
-        min_max_list([float('inf'), 5])
+        detect_peak([float('inf'), 5])
     with pytest.raises(ValueError):
-        min_max_list([float('-inf'), 5])
+        detect_peak([float('-inf'), 5])

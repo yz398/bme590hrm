@@ -23,7 +23,7 @@ def mean_bpm(interval,time):
         raise TypeError('TypeError with the input')
     if not x:
         logging.warning("Empty list given")
-        return (None, None)
+        return None
     for val in x:
         try:
             num = float(val)

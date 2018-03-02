@@ -15,18 +15,18 @@ def test_beats():
     assert test_answer1 == beats(test_data1)
     assert test_answer2 == beats(test_data2) 
     with pytest.raises(TypeError):
-        min_max_list(5)
+        beats(5)
     with pytest.raises(TypeError):
-        min_max_list('abc')
+        beats('abc')
     with pytest.raises(TypeError):
-        min_max_list({1: 4})
+        beats({1: 4})
     with pytest.raises(ValueError):
-        min_max_list(['s', 's'])
+        beats(['s', 's'])
     with pytest.raises(ValueError):
-        min_max_list(['-inf', 5])
+        beats(['-inf', 5])
     with pytest.raises(ValueError):
-        min_max_list(['+inf', 5])
+        beats(['+inf', 5])
     with pytest.raises(ValueError):
-        min_max_list([float('inf'), 5])
+        beats([float('inf'), 5])
     with pytest.raises(ValueError):
-        min_max_list([float('-inf'), 5])
+        beats([float('-inf'), 5]) 

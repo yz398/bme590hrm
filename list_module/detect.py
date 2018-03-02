@@ -9,8 +9,8 @@ def detect_peak(x):
     :raises TypeError:  if the input is not a list or the input includes string
     :raises ValueError: if the input includes string
 
-    :returns: return a tuple include minimum and maximum of the list
-    :rtype: (float,float)
+    :returns: return a list of indexes and value
+    :rtype: [float,float]
     """
     try:
         import logging

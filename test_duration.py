@@ -16,18 +16,18 @@ def test_duration():
     assert test_answer2 == duration(test_data2)
 
     with pytest.raises(TypeError):
-        min_max_list(5)
+        duration(5)
     with pytest.raises(TypeError):
-        min_max_list('abc')
+        duration('abc')
     with pytest.raises(TypeError):
-        min_max_list({1: 4})
+        duration({1: 4})
     with pytest.raises(ValueError):
-        min_max_list(['s', 's'])
+        duration(['s', 's'])
     with pytest.raises(ValueError):
-        min_max_list(['-inf', 5])
+        duration(['-inf', 5])
     with pytest.raises(ValueError):
-        min_max_list(['+inf', 5])
+        duration(['+inf', 5])
     with pytest.raises(ValueError):
-        min_max_list([float('inf'), 5])
+        duration([float('inf'), 5])
     with pytest.raises(ValueError):
-        min_max_list([float('-inf'), 5])
+        duration([float('-inf'), 5])
