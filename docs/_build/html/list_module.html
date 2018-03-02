@@ -1,0 +1,321 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>list_module package &#8212; ECG 3/2/2018 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="list-module-package">
+<h1>list_module package<a class="headerlink" href="#list-module-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-list_module.beats">
+<span id="list-module-beats-module"></span><h2>list_module.beats module<a class="headerlink" href="#module-list_module.beats" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="list_module.beats.beats">
+<code class="descclassname">list_module.beats.</code><code class="descname">beats</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#list_module.beats.beats" title="Permalink to this definition">¶</a></dt>
+<dd><p>find the duration for the sample</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> – the input should be a list of peaks</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>ImportError</strong> – if the module not found</li>
+<li><strong>TypeError</strong> – if the input is not a list or the input includes string</li>
+<li><strong>ValueError</strong> – if the input includes string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">return a tuple include minimum and maximum of the list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-list_module.collectdata">
+<span id="list-module-collectdata-module"></span><h2>list_module.collectdata module<a class="headerlink" href="#module-list_module.collectdata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="list_module.collectdata.collectdata">
+<code class="descclassname">list_module.collectdata.</code><code class="descname">collectdata</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#list_module.collectdata.collectdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list included time and voltage</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>self</strong> (<em>list</em>) – list to be determined and used later</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-list_module.detect">
+<span id="list-module-detect-module"></span><h2>list_module.detect module<a class="headerlink" href="#module-list_module.detect" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="list_module.detect.detect_peak">
+<code class="descclassname">list_module.detect.</code><code class="descname">detect_peak</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#list_module.detect.detect_peak" title="Permalink to this definition">¶</a></dt>
+<dd><p>find the peaks of the list of voltages and
+return peaks value and indexes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> – the input should be a list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>ImportError</strong> – if the module not found</li>
+<li><strong>TypeError</strong> – if the input is not a list or the input includes string</li>
+<li><strong>ValueError</strong> – if the input includes string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">return a tuple include minimum and maximum of the list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(float,float)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-list_module.duration">
+<span id="list-module-duration-module"></span><h2>list_module.duration module<a class="headerlink" href="#module-list_module.duration" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="list_module.duration.duration">
+<code class="descclassname">list_module.duration.</code><code class="descname">duration</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#list_module.duration.duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>find the duration for the sample</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> – the input should be a list of time</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>ImportError</strong> – if the module not found</li>
+<li><strong>TypeError</strong> – if the input is not a list or the input includes string</li>
+<li><strong>ValueError</strong> – if the input includes string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">return a tuple include minimum and maximum of the list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-list_module.mean_bpm">
+<span id="list-module-mean-bpm-module"></span><h2>list_module.mean_bpm module<a class="headerlink" href="#module-list_module.mean_bpm" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="list_module.mean_bpm.mean_bpm">
+<code class="descclassname">list_module.mean_bpm.</code><code class="descname">mean_bpm</code><span class="sig-paren">(</span><em>interval</em>, <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#list_module.mean_bpm.mean_bpm" title="Permalink to this definition">¶</a></dt>
+<dd><p>find the duration for the sample</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> – the input should be a list of peaks</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>ImportError</strong> – if the module not found</li>
+<li><strong>TypeError</strong> – if the input is not a list or the input includes string</li>
+<li><strong>ValueError</strong> – if the input includes string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">return a tuple include minimum and maximum of the list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-list_module.min_max_voltage">
+<span id="list-module-min-max-voltage-module"></span><h2>list_module.min_max_voltage module<a class="headerlink" href="#module-list_module.min_max_voltage" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="list_module.min_max_voltage.min_max_voltage">
+<code class="descclassname">list_module.min_max_voltage.</code><code class="descname">min_max_voltage</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#list_module.min_max_voltage.min_max_voltage" title="Permalink to this definition">¶</a></dt>
+<dd><p>find the minimum and the maximum of a list of voltage and return a tuple</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> – the input should be a list of voltage</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>ImportError</strong> – if the module not found</li>
+<li><strong>TypeError</strong> – if the input is not a list or the input includes string</li>
+<li><strong>ValueError</strong> – if the input includes string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">return a tuple include minimum and maximum of the list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(float,float)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-list_module.time_beats">
+<span id="list-module-time-beats-module"></span><h2>list_module.time_beats module<a class="headerlink" href="#module-list_module.time_beats" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="list_module.time_beats.time_beats">
+<code class="descclassname">list_module.time_beats.</code><code class="descname">time_beats</code><span class="sig-paren">(</span><em>x</em>, <em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#list_module.time_beats.time_beats" title="Permalink to this definition">¶</a></dt>
+<dd><p>find the time series for a beat
+the first value of each row is the valid number of the time series</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> – the input include information about peak index</li>
+<li><strong>f</strong> – the input include information for all time</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first simple">
+<li><strong>ImportError</strong> – if the module not found</li>
+<li><strong>TypeError</strong> – if the input is not a list or the input includes string</li>
+<li><strong>ValueError</strong> – if the input includes string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">return a tuple include minimum and maximum of the list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numpy array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-list_module">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-list_module" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">list_module package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-list_module.beats">list_module.beats module</a></li>
+<li><a class="reference internal" href="#module-list_module.collectdata">list_module.collectdata module</a></li>
+<li><a class="reference internal" href="#module-list_module.detect">list_module.detect module</a></li>
+<li><a class="reference internal" href="#module-list_module.duration">list_module.duration module</a></li>
+<li><a class="reference internal" href="#module-list_module.mean_bpm">list_module.mean_bpm module</a></li>
+<li><a class="reference internal" href="#module-list_module.min_max_voltage">list_module.min_max_voltage module</a></li>
+<li><a class="reference internal" href="#module-list_module.time_beats">list_module.time_beats module</a></li>
+<li><a class="reference internal" href="#module-list_module">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/list_module.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Yi Zhao.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/list_module.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

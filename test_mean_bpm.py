@@ -6,6 +6,7 @@ def test_mean_bpm():
         import pytest
         from list_module.mean_bpm import mean_bpm
         from list_module.beats import beats
+        from list_module.duration import duration
     except ImportError:
         print("Necessary imports for this test function failed")
         return
@@ -13,11 +14,11 @@ def test_mean_bpm():
     x1 = [1, 2, 3, 4]
     f1 = [1, 2, 3]
     x2 = []
-    f2 = []
+    f2 = [1, 2, 3]
     test_answer1 = 120.0
     test_answer2 = None
-    assert test_answer1 == mean_bpm(test_data1)
-    assert test_answer2 == mean_bpm(test_data2)
+    assert test_answer1 == mean_bpm(x1, f1)
+    assert test_answer2 == mean_bpm(x2, f2)
     with pytest.raises(TypeError):
         mean_bpm(5, 6)
     with pytest.raises(TypeError):
